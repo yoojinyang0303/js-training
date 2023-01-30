@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   height: 100%;
   margin: 0;
@@ -11,7 +11,8 @@ body {
  * active 클래스가 추가된 이후에 body를 표시해서 새로고침 시 nav 요소와 main 요소의 위치가 이동하는 움직임이 사용자에게 보이지 않도록 한다.
  */
 body {
-  visibility: hidden;
+  /* 새로고침 시 nav 요소와 main 요소의 위치 이동 움직임 안 보이도록 하는 코드 */
+  /* visibility: hidden; */
 }
 .container {
   position: relative;
@@ -35,6 +36,9 @@ main {
   padding: 20px;
 }
 .toggle {
+  /* 내가 작성한 부분 start */
+  /* display: none; */
+  /* 내가 작성한 부분 end */
   font-size: 2em;
   color: maroon;
   cursor: pointer;
@@ -43,6 +47,9 @@ main {
 /* nav 요소 활성화 */
 nav.active,
 nav.active ~ main {
+  /* 내가 작성한 부분 start */
+  display: flex;
+  /* 내가 작성한 부분 end */
   transform: translate3d(300px, 0, 0);
 }
 nav.active ~ main > .toggle {
