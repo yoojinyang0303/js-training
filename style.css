@@ -36,9 +36,6 @@ main {
   padding: 20px;
 }
 .toggle {
-  /* 내가 작성한 부분 start */
-  /* display: none; */
-  /* 내가 작성한 부분 end */
   font-size: 2em;
   color: maroon;
   cursor: pointer;
@@ -47,9 +44,6 @@ main {
 /* nav 요소 활성화 */
 nav.active,
 nav.active ~ main {
-  /* 내가 작성한 부분 start */
-  display: flex;
-  /* 내가 작성한 부분 end */
   transform: translate3d(300px, 0, 0);
 }
 nav.active ~ main > .toggle {
