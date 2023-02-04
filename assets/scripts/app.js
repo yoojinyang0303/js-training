@@ -18,9 +18,11 @@ const userInputs = addMovieModalEl.querySelectorAll("input");
 
 const entryTextSection = document.getElementById("entry-text");
 
+const deleteMovieModal = document.getElementById("delete-modal");
+
 const movies = [];
 
-const deleteMovieHandler = (movieId) => {
+const deleteMovie = (movieId) => {
   let movieIndex = 0;
   for (const movie of movies) {
     if (movie.id === movieId) {
@@ -32,6 +34,17 @@ const deleteMovieHandler = (movieId) => {
   const listRoot = document.getElementById("movie-list");
   listRoot.children[movieIndex].remove();
   //   listRoot.removeChild(listRoot.children[movieIndex]);
+};
+
+const closeMovieDeletionModal = () => {
+  toggleBackdrop();
+  deleteMovieModal.classList.remove("visible");
+};
+
+const deleteMovieHandler = (movieId) => {
+  deleteMovieModal.classList.add("visible");
+  toggleBackdrop();
+  //   deleteMovie(movieId);
 };
 
 const renderNewMovieEl = (id, title, imageUrl, rating) => {
@@ -60,7 +73,7 @@ const updateUI = () => {
 };
 
 const cancelAddMovieHandler = () => {
-  toggleMovieModal();
+  closeMovieModal();
   clearMovieInput();
 };
 
@@ -69,9 +82,13 @@ const toggleBackdrop = () => {
   backdropEl.classList.toggle("visible");
 };
 
-const toggleMovieModal = () => {
+const closeMovieModal = () => {
+  addMovieModalEl.classList.remove("visible");
+};
+
+const showMovieModal = () => {
   // classList.toggle() :: 이 class가 이미 요소에 있으면 그것을 제거, 없으면 그것을 추가함.
-  addMovieModalEl.classList.toggle("visible");
+  addMovieModalEl.classList.add("visible");
   toggleBackdrop();
 };
 
@@ -82,7 +99,8 @@ const clearMovieInput = () => {
 };
 
 const backdropClickHandler = () => {
-  toggleMovieModal();
+  closeMovieModal();
+  closeMovieDeletionModal();
 };
 
 const addMovieHandler = () => {
@@ -110,7 +128,8 @@ const addMovieHandler = () => {
 
   movies.push(newMovie);
   console.log(movies);
-  toggleMovieModal();
+  closeMovieModal();
+  toggleBackdrop();
   clearMovieInput();
   renderNewMovieEl(
     newMovie.id,
@@ -121,7 +140,7 @@ const addMovieHandler = () => {
   updateUI();
 };
 
-startAddMovieButton.addEventListener("click", toggleMovieModal);
+startAddMovieButton.addEventListener("click", showMovieModal);
 backdropEl.addEventListener("click", backdropClickHandler);
 cancelAddMovieButton.addEventListener("click", cancelAddMovieHandler);
 confirmAddMovieButton.addEventListener("click", addMovieHandler);
