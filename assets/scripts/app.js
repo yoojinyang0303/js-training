@@ -16,8 +16,11 @@ const confirmAddMovieButton = cancelAddMovieButton.nextElementSibling;
 
 const userInputs = addMovieModalEl.querySelectorAll("input");
 
+const movies = [];
+
 const cancelAddMovieHandler = () => {
   toggleMovieModal();
+  clearMovieInput();
 };
 
 const backdropEl = document.getElementById("backdrop");
@@ -29,6 +32,12 @@ const toggleMovieModal = () => {
   // classList.toggle() :: 이 class가 이미 요소에 있으면 그것을 제거, 없으면 그것을 추가함.
   addMovieModalEl.classList.toggle("visible");
   toggleBackdrop();
+};
+
+const clearMovieInput = () => {
+  for (const userInput of userInputs) {
+    userInput.value = "";
+  }
 };
 
 const backdropClickHandler = () => {
@@ -50,6 +59,17 @@ const addMovieHandler = () => {
     alert("Please enter valid values (rating between 1 and 5).");
     return;
   }
+
+  const newMovie = {
+    title: titleValue,
+    image: imageUrlValue,
+    rating: ratingValue,
+  };
+
+  movies.push(newMovie);
+  console.log(movies);
+  toggleMovieModal();
+  clearMovieInput();
 };
 
 startAddMovieButton.addEventListener("click", toggleMovieModal);
