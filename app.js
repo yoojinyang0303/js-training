@@ -1,37 +1,28 @@
 "use strict";
 
 // 로컬스토리지 데이터 읽기
-let toggleMode = localStorage.getItem("toggleMode");
+let toggleStatus = localStorage.getItem("toggleStatus");
 const sideButton = document.querySelector("i");
-let navBar = document.querySelector("nav");
+const navBar = document.querySelector("nav");
 
-const activeToggleMode = () => {
+const activeToggleStatus = () => {
+  localStorage.setItem("toggleStatus", "active");
   navBar.classList.add("active");
-  localStorage.setItem("toggleMode", "active");
 };
 
-const disableToggleMode = () => {
+const disableToggleStatus = () => {
+  localStorage.setItem("toggleStatus", null);
   navBar.classList.remove("active");
-  localStorage.setItem("toggleMode", null);
 };
-if (toggleMode === "active") {
-  activeToggleMode();
-}
+
+if (toggleStatus === "active") activeToggleStatus();
 
 sideButton.addEventListener("click", () => {
-  // toggleMode = localStorage.getItem("toggleMode");
-  if (toggleMode == "active") {
-    disableToggleMode();
+  if (toggleStatus !== "active") {
+    activeToggleStatus();
   } else {
-    activeToggleMode();
+    disableToggleStatus();
   }
+  // 클릭할 때마다 토글 상태값 초기화
+  toggleStatus = localStorage.getItem("toggleStatus");
 });
-
-// sideButton.addEventListener("click", () => {
-//   toggleMode = localStorage.getItem("toggleMode");
-//   if (toggleMode !== "active") {
-//     activeToggleMode();
-//   } else {
-//     disableToggleMode();
-//   }
-// });
