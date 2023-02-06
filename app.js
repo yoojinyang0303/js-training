@@ -15,10 +15,15 @@ const disableToggleMode = () => {
   localStorage.setItem("toggleMode", null);
 };
 
+// if (toggleMode === "active") {
+//   activeToggleMode();
+// } else {
+//   disableToggleMode();
+// }
 if (toggleMode === "active") {
-  activeToggleMode();
-} else {
   disableToggleMode();
+} else {
+  activeToggleMode();
 }
 
 sideButton.addEventListener("click", () => {
