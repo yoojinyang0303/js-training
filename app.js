@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // 로컬스토리지 데이터 읽기
 let toggleStatus = localStorage.getItem("toggleStatus");
