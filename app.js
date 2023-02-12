@@ -10,11 +10,11 @@ $containers.forEach(($container) => {
 const isParentInClass = (element, className) => {
   if (
     element.classList.contains(className) ||
-    element.classList.contains("calander")
+    element.classList.contains("calendarr")
   ) {
     return true;
   }
-  if (element.parendElement) {
+  if (element.parentElement) {
     return isParentInClass(element.parentElement, className);
   }
   return false;

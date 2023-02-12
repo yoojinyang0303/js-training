@@ -1,4 +1,4 @@
-const Calender = (nowDate) => {
+const Calendar = (nowDate) => {
   let nowYear = nowDate.getFullYear();
   let nowMonthIdx = nowDate.getMonth();
 
@@ -71,6 +71,7 @@ const Calender = (nowDate) => {
 
     let dayElement = document.createElement("div");
     dayElement.className = `day ${addClass}`;
+    dayElement.innerHTML = String(i);
     const month = String(nowDate.getMonth() + 1).padStart(2, "0");
     const day = String(i).padStart(2, "0");
     dayElement.dataset.date = `${nowDate.getFullYear()} - ${month} - ${day}`;
@@ -81,7 +82,7 @@ const Calender = (nowDate) => {
   }
 
   const nextDays = [];
-  for (let i; i < (7 - nowLastDay - 1 === 7 ? 0 : 7 - nowLastDay); i++) {
+  for (let i = 1; i < (7 - nowLastDay - 1 === 7 ? 0 : 7 - nowLastDay); i++) {
     let dayElement = document.createElement("div");
     dayElement.className = "next-day";
     dayElement.innerHTML = String(i);

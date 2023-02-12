@@ -7,7 +7,7 @@ const DatePicker = () => {
   element.insertAdjacentHTML(
     "beforeend",
     `
-        <h1 class="date-picker-title'>Date Picker</h1>
+        <h1 class="date-picker-title">Date Picker</h1>
     `
   );
 
@@ -25,6 +25,7 @@ const DatePicker = () => {
   inputElement.addEventListener("click", function () {
     const calendarElement = element.querySelector(".calendar");
 
+    // calendarElement.classList.toggle("hidden");
     if (calendarElement.classList.contains("hidden")) {
       calendarElement.classList.remove("hidden");
     } else {
