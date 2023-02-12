@@ -1,4 +1,4 @@
-const Calander = (nowDate) => {
+const Calender = (nowDate) => {
   let nowYear = nowDate.getFullYear();
   let nowMonthIdx = nowDate.getMonth();
 
