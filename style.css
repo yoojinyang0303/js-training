@@ -1,6 +1,11 @@
-.calander {
+* {
+  box-sizing: border-box;
+}
+
+.calendar {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 20em;
   margin: 0 auto;
   overflow: hidden;
@@ -10,13 +15,14 @@
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
 
-.calander-nav {
+.calendar-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-basis: 3em;
   position: relative;
-  background-color: var(--color-mint);
+  padding: 1rem 0;
+  background-color: var(--color-light-green);
 }
 
 .view-month-year {
@@ -27,7 +33,7 @@
 .triangle-left {
   position: absolute;
   left: 25px;
-  transform: rotate(270deeg);
+  transform: rotate(270deg);
   cursor: pointer;
   border-right: 5px solid transparent;
   border-bottom: 10px solid var(--color-white);
@@ -36,8 +42,8 @@
 
 .triangle-right {
   position: absolute;
-  left: 25px;
-  transform: rotate(90deeg);
+  right: 25px;
+  transform: rotate(90deg);
   cursor: pointer;
   border-right: 5px solid transparent;
   border-bottom: 10px solid var(--color-white);
@@ -48,10 +54,10 @@
   display: grid;
   grid-template-columns: repeat(7, 20px);
   grid-gap: 1em;
-  justify-content: center;
+  justify-content: space-evenly;
   justify-items: center;
-  width: 100%;
-  margin: 1em 0;
+  width: 95%;
+  margin: 1em auto;
 }
 
 .previous-day,
@@ -87,7 +93,7 @@
   height: 2em;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid var(--color-mint);
+  border: 1px solid var(--color-light-green);
 }
 
 .previous-day:hover,
@@ -95,7 +101,7 @@
 .day:hover {
   border-radius: 50%;
   text-align: center;
-  background-color: var(--color-mint);
+  background-color: var(--color-light-green);
 }
 
 .date {
@@ -106,7 +112,7 @@
 .click-date {
   border-radius: 50%;
   text-align: center;
-  background-color: var(--color-mint);
+  background-color: var(--color-light-green);
 }
 
 .date-picker-title {

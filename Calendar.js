@@ -99,7 +99,7 @@ const Calendar = (nowDate) => {
   element.className = "calendar hidden";
 
   const calendarNavElement = document.createElement("div");
-  calendarNavElement.className = "canlendar-nav";
+  calendarNavElement.className = "calendar-nav";
 
   const navElementLeft = document.createElement("div");
   navElementLeft.className = "triangle-left";
