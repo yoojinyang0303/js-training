@@ -35,10 +35,9 @@ const Calendar = (nowDate) => {
           element.classList.remove("click-date");
         });
 
-      // const inputElement = element.parentElement.querySelectorAll("input");
+      const inputElement = element.parentElement.querySelectorAll("input");
       dayElement.classList.add("click-date");
-      // inputElement.value = e.target.dataset.date;
-      document.querySelector("input").value = e.target.dataset.date;
+      inputElement.value = e.target.dataset.date;
       // element.classList.add("hidden");
     });
   };
@@ -104,38 +103,6 @@ const Calendar = (nowDate) => {
 
   // let hiddenStatus = sessionStorage.getItem("hiddenStatus");
 
-  //
-  // const clickDayHandler = (dayElement) => {
-  //   dayElement.addEventListener("click", (e) => {
-  //     e.target.parentElement
-  //       .querySelectorAll(".click-date")
-  //       .forEach((element) => {
-  //         element.classList.remove("click-date");
-  //       });
-
-  //     const inputElement = element.parentElement.querySelectorAll("input");
-  //     dayElement.classList.add("click-date");
-  //     inputElement.value = e.target.dataset.date;
-  //     // element.classList.add("hidden");
-  //   });
-  // };
-  //
-
-  // const navElementLeft = document.createElement("div");
-  // navElementLeft.className = "triangle-left";
-  // navElementLeft.addEventListener("click", (e) => {
-  //   const calendar = Calendar(
-  //     new Date(nowDate.setMonth(nowDate.getMonth() - 1))
-  //   );
-  //     e.target.parentElement.
-  //   if (element.classList.contains("hidden")) {
-  //     element.classList.remove("hidden");
-  //   } else {
-  //     calendar.classList.remove("hidden");
-  //     element.replaceWith(calendar);
-  //   }
-  // });
-
   const navElementLeft = document.createElement("div");
   navElementLeft.className = "triangle-left";
   navElementLeft.addEventListener("click", function () {
@@ -146,7 +113,7 @@ const Calendar = (nowDate) => {
       const calendar = Calendar(
         new Date(nowDate.setMonth(nowDate.getMonth() - 1))
       );
-      // calendar.classList.remove("hidden");
+      calendar.classList.remove("hidden");
       element.replaceWith(calendar);
     }
     // sessionStorage.setItem("hiddenStatus", "hidden");
