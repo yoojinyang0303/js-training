@@ -24,7 +24,7 @@ const Nav = (data) => {
         element.classList.remove("active");
       });
       event.target.classList.add("active");
-      data.category = event.target.if;
+      data.category = event.target.id;
     });
   });
 

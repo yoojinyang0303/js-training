@@ -1,6 +1,6 @@
 // do something!
-import Nav from "./components/Nav";
-import NewsList from "./components/NewsList";
+import Nav from "./components/Nav.js";
+import NewsList from "./components/NewsList.js";
 
 window.onload = async function () {
   const root = document.getElementById("root");
