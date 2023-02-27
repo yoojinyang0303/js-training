@@ -5,11 +5,17 @@
     return document.querySelector(target);
   };
 
+  let page = 1;
+  const limit = 10;
   const $posts = get(".posts");
+  const end = 100; // API에서 불러올 전체 데이터 수
+  let total = 10;
 
-  const getPost = async () => {
+  const $loader = get(".loader");
+
+  const getPosts = async () => {
     // API URL 가져오기
-    const API_URL = "https://jsonplaceholder.typicode.com/posts";
+    const API_URL = `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`;
     const response = await fetch(API_URL);
 
     if (!response.ok) {
@@ -35,12 +41,49 @@
     });
   };
 
-  const loadPost = async () => {
-    const response = await getPost();
-    showPosts(response);
+  //   const loadPosts = async () => {
+  //     const response = await getPosts();
+  //     showPosts(response);
+  //   };
+
+  const showLoader = () => {
+    $loader.classList.add("show");
+  };
+  const hideLoader = () => {
+    $loader.classList.remove("show");
+  };
+
+  const loadPosts = async () => {
+    // 로딩 엘리먼트 보여줌
+    showLoader();
+    try {
+      const response = await getPosts();
+      showPosts(response);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      // 로딩 엘리먼트를 사라지게 함
+      hideLoader();
+    }
+  };
+
+  const onScroll = () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+    if (total == end) {
+      window.removeEventListener("scroll", onScroll);
+      return;
+    }
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+      page++;
+      total += 10;
+      loadPosts();
+    }
   };
 
   window.addEventListener("DOMContentLoaded", () => {
-    loadPost();
+    loadPosts();
+    // 스크롤 끝 감지
+    window.addEventListener("scroll", onScroll);
   });
 })();
