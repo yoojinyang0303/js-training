@@ -13,6 +13,7 @@
 
       this.totalItems = this.items.length;
       this.current = 0; // 캐러셀 아이템들의 인덱스 역할. 초기값으로 0 설정한 것임.
+      this.isMoving = false; // True인 경우 버튼을 클릭해도 이미지 전환 이벤트 X
     }
 
     // 브라우저 로드 시, 캐러셀 초기화
@@ -20,6 +21,14 @@
       this.items[0].classList.add("active");
       this.items[1].classList.add("next");
       this.items[this.totalItems - 1].classList.add("prev");
+      this.isMoving = false;
+    }
+
+    disabledInteraction() {
+      this.isMoving = true;
+      setTimeout(() => {
+        this.isMoving = false;
+      }, 500);
     }
 
     setEventListener() {
@@ -39,6 +48,10 @@
     }
 
     moveCaourselTo() {
+      if (this.isMoving) {
+        return;
+      }
+      this.disabledInteraction();
       let prev = this.current - 1;
       let next = this.current + 1;
 
@@ -62,6 +75,9 @@
     }
 
     moveNext() {
+      if (this.isMoving) {
+        return;
+      }
       if (this.current === this.totalItems - 1) {
         this.current = 0;
       } else {
@@ -70,6 +86,9 @@
       this.moveCaourselTo();
     }
     movePrev() {
+      if (this.isMoving) {
+        return;
+      }
       if (this.current === 0) {
         this.current = this.totalItems - 1;
       } else {
