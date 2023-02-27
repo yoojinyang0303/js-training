@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20em;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 1em;
+  border-radius: 3%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 3em;
+  position: relative;
+  padding: 1rem 0;
+  background-color: var(--color-light-green);
+}
+
+.view-month-year {
+  color: var(--color-white);
+  text-align: center;
+}
+
+.triangle-left {
+  position: absolute;
+  left: 25px;
+  transform: rotate(270deg);
+  cursor: pointer;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid var(--color-white);
+  border-left: 5px solid transparent;
+}
+
+.triangle-right {
+  position: absolute;
+  right: 25px;
+  transform: rotate(90deg);
+  cursor: pointer;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid var(--color-white);
+  border-left: 5px solid transparent;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 20px);
+  grid-gap: 1em;
+  justify-content: space-evenly;
+  justify-items: center;
+  width: 95%;
+  margin: 1em auto;
+}
+
+.previous-day,
+.next-day {
+  width: 2em;
+  height: 2em;
+  padding-top: 0.5em;
+  color: var(--color-gray);
+  text-align: center;
+  cursor: pointer;
+}
+
+.day {
+  width: 2em;
+  height: 2em;
+  padding-top: 0.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* 일요일은 빨간날 */
+.day:nth-child(7n + 1) {
+  color: var(--color-red);
+}
+
+.week {
+  color: var(--color-gray);
+  font-size: 0.8em;
+}
+
+.today {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-light-green);
+}
+
+.previous-day:hover,
+.next-day:hover,
+.day:hover {
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--color-light-green);
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+}
+
+.click-date {
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--color-light-green);
+}
+
+.date-picker-title {
+  color: var(--color-light-red);
+  font-size: 2em;
+  font-weight: normal;
+}
+
+.date-picker-input {
+  height: 2em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}

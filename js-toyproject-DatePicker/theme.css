@@ -1,0 +1,15 @@
+/* 반응형 */
+@media (max-width: 1200px) {
+  .calander {
+    font-size: 75%;
+  }
+}
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray: #bebebe;
+  --color-light-red: #fe642e;
+  --color-red: #ff0000;
+  --color-light-green: #43c379;
+}
