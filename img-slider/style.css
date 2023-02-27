@@ -68,7 +68,7 @@
 
 .carousel_button--prev::after,
 .carousel_button--next::after {
-  content: ' ';
+  content: " ";
   position: absolute;
   width: 10px;
   height: 10px;

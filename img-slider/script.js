@@ -17,9 +17,9 @@
 
     // 브라우저 로드 시, 캐러셀 초기화
     initCarousel() {
-        this.items[0].classList.add('active');
-        this.items[1].classList.add('next');
-        this.items[this.totalItems-1].classList.add('prev');
+      this.items[0].classList.add("active");
+      this.items[1].classList.add("next");
+      this.items[this.totalItems - 1].classList.add("prev");
     }
 
     setEventListener() {
@@ -51,13 +51,12 @@
       for (let i = 0; i < this.totalItems; i++) {
         if (i === this.current) {
           this.items[i].className = this.itemClassName + " active";
-        } else if(i === prev) {
-            this.items[i].className = this.itemClassName + " prev";
-        }
-        } else if(i === next) {
-            this.items[i].className = this.itemClassName + " next";
+        } else if (i === prev) {
+          this.items[i].className = this.itemClassName + " prev";
+        } else if (i === next) {
+          this.items[i].className = this.itemClassName + " next";
         } else {
-            this.items[i].className = this.itemClassName;
+          this.items[i].className = this.itemClassName;
         }
       }
     }
@@ -83,8 +82,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     const carouselElement = get(".carousel");
     const carousel = new Carousel(carouselElement); /* 캐러셀 인스턴스 */
-  
+
     carousel.initCarousel();
     carousel.setEventListener();
-    })
+  });
 })();
