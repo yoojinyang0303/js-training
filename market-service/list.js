@@ -17,89 +17,27 @@
 </div>
 */
 
-import { appendChildrenList, makeDOMwithProperties } from "./utils/dom.js";
+import { getProductCard } from "./module/productCard.js";
 ("use strict");
 
 const sectionDOM = document.getElementsByTagName("section")[0];
 
-const productCard = makeDOMwithProperties("div", {
-  className: "product-card",
+const productCard = getProductCard({
+  id: 3,
+  imgSrc: "/market-service/public/assets/머핀.jpg",
+  name: "머핀",
+  discountPercent: 10,
+  price: 4950,
+  originalPrice: 5500,
 });
-
-// --- product Image con ---
-const productImageCon = makeDOMwithProperties("div", {
-  className: "product-image-con",
+const productCard2 = getProductCard({
+  id: 7,
+  imgSrc: "/market-service/public/assets/아보카도.jpg",
+  name: "아보카도",
+  discountPercent: 20,
+  price: 2000,
+  originalPrice: 25000,
 });
-const productImage = makeDOMwithProperties("img", {
-  src: "./public/assets/파프리카.jpg",
-  alt: "파프리카",
-});
-const cartToggleBtn = makeDOMwithProperties("button", {
-  className: "cart-toggle-btn",
-  type: "button",
-});
-const cartImage = makeDOMwithProperties("img", {
-  className: "cart-image",
-  src: "./public/assets/cart.png",
-});
-cartToggleBtn.appendChild(cartImage);
-// productImageCon.appendChild(productImage);
-// productImageCon.appendChild(cartToggleBtn);
-appendChildrenList(productImageCon, [productImage, cartToggleBtn]);
-
-// --- product Image con ---
-
-// const productCard = document.createElement("div");
-// productCard.className = "product-card";
-
-// const productImageCon = document.createElement("div");
-// productImageCon.className = "product-image-con";
-
-// const productImage = document.createElement("img");
-// productImage.src = "./public/assets/파프리카.jpg";
-// productImage.alt = "파프리카";
-
-const productDescription = makeDOMwithProperties("div", {
-  className: "product-description",
-});
-const productName = makeDOMwithProperties("div", {
-  className: "product-name",
-  innerHTML: "파프리카",
-});
-
-const productPriceCon = makeDOMwithProperties("div", {
-  className: "product-price-con",
-});
-const productDiscount = makeDOMwithProperties("div", {
-  className: "product-discount-percent",
-  innerHTML: `20%`,
-  //   innerHTML: `${discountPercent}%`,
-});
-const productPrice = makeDOMwithProperties("div", {
-  className: "product-price",
-  innerHTML: `2000원`,
-  //   innerHTML: `${price.toLocaleString()}원`,
-});
-const productOriginalPrice = makeDOMwithProperties("div", {
-  className: "product-original-price",
-  innerHTML: `2500원`,
-  //   innerHTML: `${originalPrice.toLocaleString()}원`,
-});
-
-appendChildrenList(productPriceCon, [productDiscount, productPrice]);
-// productPriceCon.appendChild(productDiscount);
-// productPriceCon.appendChild(productPrice);
-appendChildrenList(productDescription, [
-  productName,
-  productPriceCon,
-  productOriginalPrice,
-]);
-// productDescription.appendChild(productName);
-// productDescription.appendChild(productPriceCon);
-// productDescription.appendChild(productOriginalPrice);
-
-// --- product Description ---
-
-appendChildrenList(productCard, [productImageCon, productDescription]);
 
 sectionDOM.appendChild(productCard);
+sectionDOM.appendChild(productCard2);
