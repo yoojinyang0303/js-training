@@ -1,0 +1,97 @@
+{
+  "sectionInfoList": [
+    {
+      "sectionTitle": "인기 상품",
+      "productList": [
+        {
+          "id": 1,
+          "imgSrc": "/market-service/public/assets/단호박.jpg",
+          "name": "단호박 1통",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 2500
+        },
+        {
+          "id": 2,
+          "imgSrc": "/market-service/public/assets/당근.jpg",
+          "name": "친환경 당근 400g",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 2500
+        },
+        {
+          "id": 3,
+          "imgSrc": "/market-service/public/assets/머핀.jpg",
+          "name": "머핀",
+          "discountPercent": 10,
+          "price": 4950,
+          "originalPrice": 5500
+        },
+        {
+          "id": 4,
+          "imgSrc": "/market-service/public/assets/바나나.jpg",
+          "name": "바나나",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 2500
+        },
+        {
+          "id": 5,
+          "imgSrc": "/market-service/public/assets/삼겹살.jpg",
+          "name": "삼겹살",
+          "discountPercent": 15,
+          "price": 8500,
+          "originalPrice": 10000
+        },
+        {
+          "id": 6,
+          "imgSrc": "/market-service/public/assets/식빵.jpg",
+          "name": "식빵",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 25000
+        },
+        {
+          "id": 7,
+          "imgSrc": "/market-service/public/assets/아보카도.jpg",
+          "name": "아보카도",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 25000
+        },
+        {
+          "id": 8,
+          "imgSrc": "/market-service/public/assets/원두.jpg",
+          "name": "원두",
+          "discountPercent": 10,
+          "price": 18000,
+          "originalPrice": 20000
+        },
+        {
+          "id": 9,
+          "imgSrc": "/market-service/public/assets/키위.jpg",
+          "name": "키위",
+          "discountPercent": 20,
+          "price": 1600,
+          "originalPrice": 2000
+        },
+        {
+          "id": 10,
+          "imgSrc": "/market-service/public/assets/파스타.jpg",
+          "name": "파스타",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 2500
+        },
+        {
+          "id": 11,
+          "imgSrc": "/market-service/public/assets/파프리카.jpg",
+          "name": "파프리카 2입",
+          "discountPercent": 20,
+          "price": 2000,
+          "originalPrice": 2500
+        }
+      ]
+    }
+  ]
+}
